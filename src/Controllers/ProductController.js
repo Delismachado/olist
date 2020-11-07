@@ -1,43 +1,41 @@
 const mongoose = require('mongoose');
-
 const Product = mongoose.model('Product');
 
 
 module.exports = {
     //List all the products
-    async index(request, response) {
+    async index(req, res) {
 
         const products = await Product.find();
 
-        return response.json(products);
+        return res.json(products);
     },
 
     // //List one products
-    async show(request, response) {
-        const product = await Product.findById(request.parms.id);
+    async show(req, res) {
+        const product = await Product.findById(req.params.id);
 
-        return response.json(product);
+        return res.json(product);
     },
 
     // //Create a product
-    async store(request, response) {
-        const product = await Product.create(request.body);
+    async store(req, res) {
+        const product = await Product.create(req.body);
 
-        return response.json(product);
+        return res.json(product);
     },
 
     // //Update product
+    async update(req, res) {
+        const product = await Product.findByIdAndUpdate(req.params.id, req.body, { new: true });
 
-    async update(request, response) {
-        const product = await Product.findByIdAndUpdate(request.parms.id, request.body, { new: true });
-
-        return response.json(product);
+        return res.json(product);
     },
+
     // //Delete a product
+    async destroy(req, res) {
+        await Product.findByIdAndRemove(req.params.id);
 
-    async destroy(request, response) {
-        await Product.findByIdAndRemove(request.parms.id);
-
-        return response.send();
+        return res.send();
     }
 }

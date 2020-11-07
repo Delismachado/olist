@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 //Criando a primeira tabela/schema no banco de dados
-const ProductShema = new mongoose.Schema({
+const ProductSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true
@@ -26,4 +26,5 @@ const ProductShema = new mongoose.Schema({
         default: Date.now
     }
 });
-mongoose.model('Product', ProductShema);
+
+mongoose.model('Product', ProductSchema);
