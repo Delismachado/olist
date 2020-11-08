@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-//Criando a primeira tabela/schema no banco de dados
+//Criando schema product no banco de dados
 const ProductSchema = new mongoose.Schema({
     name: {
         type: String,
@@ -13,14 +13,16 @@ const ProductSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
-    url: {
-        type: String,
-        required: true
-    },
-    category: {
-        type: String,
-        required: true
-    },
+
+    categories: [
+
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Category"
+        }
+    ],
+
+
     createdAt: {
         type: Date,
         default: Date.now
