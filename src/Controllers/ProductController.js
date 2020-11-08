@@ -16,8 +16,9 @@ module.exports = {
             filters.description = new RegExp(req.query.description);
         }
         if (!!req.query.priceFrom && !!req.query.priceTo) {
-            filters.price = { $gte: 25, $lte: 50 }
-        };
+            filters.price = { $gte: req.query.priceFrom, $lte: req.query.priceTo }
+
+        }
 
         if (!!req.query.categoryId) {
             filters.categories = req.query.categoryId;
