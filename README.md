@@ -1,37 +1,69 @@
+# Indice
 
-# Trabalho no olist
-Olist é uma empresa que oferece uma plataforma de integração para vendedores e marketplaces, permitindo-lhes vender seus produtos em vários canais.
+- [Sobre](#-sobre)
+- [Como baixar o projeto](#-como-baixar-o-projeto)
+- [Passo a passo para desenvolver api](#-passo-a-passo-para-desenvolver-api)
 
-A equipe de desenvolvimento Olist consiste em desenvolvedores que amam o que fazem. Nossos processos de desenvolvimento ágil e nossa busca pelas melhores práticas de desenvolvimento proporcionam um ótimo ambiente para profissionais que gostam de criar softwares de qualidade em boa companhia.
+## Sobre
 
-Estamos sempre à procura de bons programadores que adorem melhorar seu trabalho. 
+Implementando um aplicativo para armazenar dados de produtos e categorias
 
-Este repositório contém um problema usado para avaliar as habilidades do candidato. É importante notar que resolver satisfatoriamente o problema é apenas uma parte do que será avaliado. Também consideramos outras disciplinas de programação como documentação, teste, cronograma de commit, design e melhores práticas de codificação.
+---
 
+---
 
-# Dicas:
+## Como baixar o projeto 
 
-* Leia atentamente a especificação para entender todos os requisitos do problema e do artefato antes de começar, se você não entender algo, diga-nos;
-* Verifique as recomendações e o material de referência no final desta especificação;
-* Apreciamos a simplicidade, portanto, crie uma boa configuração de projeto que nos ajudará na sua avaliação;
-* Por favor, faça testes ... nós apreciamos testes <3 ... testes tornam o mundo melhor.
+```bash
 
-# Como participar
-* Faça um fork deste repositório no Github. Se você não pode criar um fork público deste projeto, faça um repositório privado e adicione permissão de leitura para o usuário abaixo:
-  + mgranemann
-* Siga as instruções do README.md (este arquivo);
-* Candidate-se ao cargo na nossa página de carreiras com o link para o fork no Github.
-  + caso ja tenha realizado a candidatura na pagina de carreiras sem o envio do desafio, responda ao e-mail que lhe foi enviado pela equipe do seleção com o link do seu repositório.
+    # Clonar o repositório
+    $ git clone https://github.com/Delismachado/olist
 
+    # Entrar no diretório desejado
+    $ cd ...    
+    
+    # Instalar as dependências
+    $ npm init -y
+
+    # Iniciar o projeto
+    $ npm run dev
+
+    # Para configurar biblioteca de testes
+    $ yarn jest --init
+
+    # Para rodar testes (Em desenvolvimento)
+    $ yarn test ou npm test
+```
+
+---
+- Para este projeto você vai precisar:
+  > * Node.js
+  > * npm ou yarn
+  > * Docker
+  > * mongodb
+  > * Nodemon (inicia o servidor a cada alteração)
+  > * Github (para versionamento)
+
+- E para testar as rotas e banco de dados:
+  > * Insomnia
+  > * Studio3t
+
+  - E para testes:
+  > * jest
+
+- Ambiente de trabalho utilizado:
+  > * SO - linux (debian)
+  > * Editor para programar: Visual Studio Code
+  > * Bibliotecas auxiliares: express: para rotas,
+  require-dir: para buscar todos os arquivos de um diretório
 
 
 # Especificação
-Você deve implementar um aplicativo para armazenar dados de produtos e categorias.
+1. Você deve implementar um aplicativo para armazenar dados de produtos e categorias.
 
-1. Receba um CSV com as categorias e importe para o banco de dados
+- [x] Receba um CSV com as categorias e importe para o banco de dados
 
-  Dado um arquivo CSV com muitas categorias, você precisa construir um comando para importar os dados para o banco de dados. O arquivo CSV terá o seguinte formato:
-
+- [x] Importar dados de um arquivo CSV para o banco de dados, dados do arquivo:
 > nome
 > * Móveis
 > * Decoração
@@ -39,58 +71,50 @@ Você deve implementar um aplicativo para armazenar dados de produtos e categori
 > * Informática
 > * Brinquedos
 
-Cada registro de categoria no banco de dados deve ter os seguintes campos:
+= [x] Cada registro de categoria no banco de dados deve ter os seguintes campos:
 * id (autogerado)
 * nome
 
-Você precisa armazenar os dados das categorias para complementar os dados do produto que serão armazenados posteriormente (consulte o item # 2).
-
-
-2. CRUD (criar, ler, atualizar e excluir) de produtos:
+2. CRUD (criar, ler, atualizar e excluir)
 
 Você precisa implementar estas ações:
-* Criar um produto
-* Ler os dados do produto
-* Atualizar os dados do produto
-* Excluir os dados do produto
+- [x] Criar um produto
+- [x] Ler os dados do produto
+- [x] Atualizar os dados do produto
+- [x] Excluir os dados do produto
 
 Cada registro de produto possui os campos:
-* id (autogerado)
-* nome
-* descrição
-* valor
-* categorias (um produto pode estar em mais de uma categoria)
+- [x] id (autogerado)
+- [x] nome
+- [x] descrição
+- [x] valor
+- [x] categorias (relacionamento many to many)
 
 Para recuperar um produto, podemos filtrar por 4 campos (ou uma composição desses quatro):
-* nome
-* descrição
-* valor
-* categorias
-Deve ser possível navegar pelos dados de todos os produtos sem nenhum filtro.
+- [x] nome
+- [x] descrição
+- [x] valor
+- [x] categorias
+- [x] Deve ser possível navegar pelos dados de todos os produtos sem nenhum filtro.
 
 Para criar um produto, será necessário informar os dados abaixo:
-* "nome": // Nome do produto;
-* “descrição”: // Descrição do produto
-* “valor”:// Valor do produto
-* “categorias”:// Lista de ids de categorias
+- [x] "nome": // Nome do produto;
+- [x] “descrição”: // Descrição do produto
+- [x] “valor”:// Valor do produto
+- [x] “categorias”:// Lista de ids de categorias
+
+Recomendações:
+
+- [x] Utilizar padrões de projeto
+- [] Boas práticas de desenvolvimento de software (em construção)
+- [x] Utilizar paradigma de orientação a objetos
+- [x] Utilizar GitHub
+- [] Camada visual pode ser console, desktop ou web (Desenvolvendo)
+- [x] Variáveis, código e strings devem estar todos em inglês.
 
 
-# Requisitos do projeto:
-1. Pode ser feita em qualquer linguagem de programação que suporte o paradigma de orientação a objetos
-2. Utilizar padrões de projeto
-3. Boas práticas de desenvolvimento de software
-4. Utilizar paradigma de orientação a objetos
-5. Utilizar GitHub
-6. Camada visual pode ser console, desktop ou web
-7. Variáveis, código e strings devem estar todos em inglês.
-8. Escreva a documentação do projeto contendo:
-
->  * Descrição;
->  * Instruções de instalação (configuração) e teste;
->  * Breve descrição do ambiente de trabalho utilizado para executar este projeto (Computador / sistema operacional, editor de texto / IDE, bibliotecas, etc).
->  * Variáveis, código e strings devem estar todos em inglês.
   
-# Recomendações
+- Recomendações
   * Escreva testes! Por favor, faça testes ... nós apreciamos testes <3 ... testes tornam o mundo melhor;
   * Use boas práticas de programação;
   * Use as melhores práticas do git, com mensagens claras;

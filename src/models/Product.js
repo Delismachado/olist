@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-//Criando schema product no banco de dados
+//Creating the product schema
 const ProductSchema = new mongoose.Schema({
     name: {
         type: String,

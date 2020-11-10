@@ -1,14 +1,12 @@
 const mongoose = require('mongoose');
 const Product = mongoose.model('Product');
-const Category = mongoose.model('Category');
 
 
 module.exports = {
     //List all the products
     async index(req, res) {
         let filters = {};
-        // converte valor para regex (pesquisa registros contendo valor)
-        // TODO: fazer busca textual https://docs.mongodb.com/manual/text-search/
+        // converts values to regex (search records containing value)        
         if (!!req.query.name) {
             filters.name = new RegExp(req.query.name);
         }
@@ -27,13 +25,13 @@ module.exports = {
         return res.json(products);
     },
 
-    //List one products
+    //List one product
     async show(req, res) {
         const product = await Product.findById(req.params.id);
         return res.json(product);
     },
 
-    //Create a product
+    //Create product
     async store(req, res) {
         const product = await Product.create(req.body);
         return res.json(product);
@@ -45,7 +43,7 @@ module.exports = {
         return res.json(product);
     },
 
-    //Delete a product
+    //Delete product
     async destroy(req, res) {
         await Product.findByIdAndRemove(req.params.id);
         return res.send();

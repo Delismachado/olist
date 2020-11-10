@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-//Criando schema Category no banco de dados
+////Creating the category schema
 const CategorySchema = new mongoose.Schema({
     name: {
         type: String,
