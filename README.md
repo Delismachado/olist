@@ -42,7 +42,7 @@ Implementando um aplicativo para armazenar dados de produtos e categorias
   > * Docker
   > * mongodb
   > * Nodemon (inicia o servidor a cada alteração)
-  > * Github (para versionamento)
+  > * Git (para versionamento)
 
 - E para testar as rotas e banco de dados:
   > * Insomnia
@@ -71,7 +71,9 @@ Implementando um aplicativo para armazenar dados de produtos e categorias
 > * Informática
 > * Brinquedos
 
-= [x] Cada registro de categoria no banco de dados deve ter os seguintes campos:
+
+- [x] Cada registro de categoria no banco de dados deve ter os seguintes campos:
+
 * id (autogerado)
 * nome
 
